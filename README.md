@@ -10,7 +10,7 @@ Universal Remedies is expanding their operations and have built a new campus in 
  
 - They have regional offices in San Antonio, TX and Vancouver, BC, Canada, but the headquarters are in Chicago, IL.
 - The new campus consists of an 8,000 sq. ft. office building and a 6,000 sq. ft. laboratory building (both are single story), about a quarter mile apart (there is general landscaping, sidewalks, and a parking lot separating the two buildings).
-### Office Building (`FloorPlan_Office.png`)
+### Office Building 
  
 - The Regional Manager has an Administrative Assistant and 3 Secretaries.
 - The 2 IT staff share an office.
@@ -22,7 +22,7 @@ Universal Remedies is expanding their operations and have built a new campus in 
 - There is a small conference room which has a large screen for presentations and a conference phone.
 - There is a training classroom that should accommodate up to 30 students at a time.
 - Everyone needs Internet access and access to internal resources hosted at the headquarters.
-### Laboratory (`FloorPlan_PharmaLab.jpg`)
+### Laboratory 
  
 - The Director of Operations has a Pharmacist and a Technician on staff, and they share the Administration space.
   - This space should be connected to the network in the other building and to the Internet.
