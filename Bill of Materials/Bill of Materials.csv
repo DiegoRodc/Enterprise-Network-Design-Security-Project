@@ -1,0 +1,23 @@
+Item,Part/Model,Source,Qty,Unit Price (USD),Overall Cost (USD),Labor Hours,Labor Cost (USD),Category,Notes
+FS AC-224AP Wireless LAN Controller,AC-224AP,FS.com,2,2189,4378,3,300,CAPEX (Network),WLC for building Wi-Fi control (1 per building); 6× GbE uplinks; centralized controller for building APs; supports VLAN trunking and guest/internal SSIDs
+Cisco ISR 4321 Router,Cisco ISR 4321/K9,Cisco,4,850,3400,8,800,CAPEX (Network),Core Routing for both buildings (VRRP)
+Access Switch 24-port PoE (edge),24-port PoE switches (access),FS.com,3,599,1797,9,900,CAPEX (Network),PoE for phones/Aps
+Access Switch 48-port PoE (edge),48-port PoE switches (access),Estimated vendor,1,1200,1200,9,900,CAPEX (Network),PoE for phones/APs - model to be decided
+QNAP TS-464U NAS,QNAP TS-464U,CDW,2,1099.99,2199.98,4,400,CAPEX (Storage),Rack-mount file server for shared storage and back-ups.
+Netgate 6100 pfSense gateway,Netgate 6100 BASE pfSense+,Netgate Shop,3,849,2547,6,600,CAPEX (Security),Mid-range firewall/router
+Netgate 8300 pfSense gateway (main),Netgate 8300 BASE pfSense+,Netgate Shop,1,3995,3995,2,200,CAPEX (Security),High-performance primary firewall for larger traffic loads.
+TP-Link EAP610 V2 AP,TP-Link EAP610 V2,B&H,2,74.99,149.98,2,200,CAPEX (Wireless),Mid-range Wi-Fi 6 access point for internal employee wireless.
+Aruba Instant On AP22,HPE Aruba AP22,BestBuy,2,149.99,299.98,2,200,CAPEX (Wireless),Wi-Fi 6 access point used for guest or supplementary wireless coverage.
+VoIP Phone - Polycom VVX150,Polycom VVX150 (refurb),VoIPSupply/market,22,79,1738,5.5,550,CAPEX (Phones),Desk VoIP phone for employees.
+Cat6 cable 1000ft spool,MONK Cat6 1000ft,MonkCables/Amazon,4,161.99,647.96,0,0,CAPEX (Cabling),Bulk Cabling for all network runs.
+RJ45 Connectors 100-pack,Cable Matters RJ45 100-pack,Cable Matters/Amazon,6,17.1,102.6,0,0,CAPEX (Cabling),Cable ends used to terminate Cat6 runs.
+Patch Panels 24-port,24-port patch panel,Estimated vendor,6,59,354,24,2400,CAPEX (Cabling),Rack panel that terminates building cabling and organizes drops.
+Rackmount UPS (APC SMT2200RM2U),APC SMT2200RM2U,Newegg,2,0,0,2,200,CAPEX (Power),Battery backup providing power protection for network equipment.
+ISP - Dedicated Internet (monthly),Dedicated Internet per building,Meter.com estimate,2,1250,2500,0,0,OPEX (Connectivity),Monthly recurring; setup fee recorded separatel.
+ISP Setup Fee (one-time),ISP setup per building,Meter.com estimate,2,100,200,0,0,OPEX (Connectivity),One-time setup fee per building
+Rack accessories kit,Rackmount accessories,Estimated vendor,1,400,400,4,400,CAPEX (Infrastructure),
+Misc fans/cooling,Fans/blanking panels,Estimated vendor,1,300,300,2,200,CAPEX (Infrastructure),
+Drop termination & testing (all 100 drops),Labor per drop,Installation Contractor,100,,0,150,15000,INSTALL LABOR,1.5 hours per drop at $100.0/hr
+"Misc installation labor (config, testing, documentation)",,Installation Contractor,1,,0,8,800,INSTALL LABOR,Project-level misc tasks
+Total,,,167,,26209.5,240.5,24050,,50259.5
+,,,,,,,,,Total Cost of Labor and Equipment (USD) ^
