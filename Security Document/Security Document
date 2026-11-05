@@ -1,0 +1,72 @@
+# Security Overview
+ 
+**Purpose:** This document outlines the high-level security architecture and strategies implemented to protect the organization's IT infrastructure, data, and users. As the organization expands, these measures are designed to ensure confidentiality, integrity, and availability while maintaining operational efficiency.
+ 
+## 1. Security Strategy Overview
+ 
+Our security strategy follows a **Zero Trust** approach, where no user or device is inherently trusted, both inside and outside the corporate network. Every access request is verified, authenticated, and continuously monitored before granting access to resources.
+ 
+## 2. SIEM
+ 
+- **Solution:** Splunk
+- **Purpose:** Centralized monitoring and detection of endpoint threats, real-time visibility
+- **Capabilities:**
+  - Threat detection and correlation
+  - Automated incident response
+  - Behavioral analytics for anomalous activity
+## 3. Data Storage and Backup
+ 
+- **Network Attached Storage (NAS):** Centralized storage for critical business data.
+- **Backup Strategy:**
+  - RAID configuration (e.g., RAID 6) to ensure redundancy and data integrity.
+  - Regular offsite or cloud backups to protect against data loss or ransomware.
+- **Objective:** Ensure high availability and quick recovery in case of hardware failure or cyber incidents.
+## 4. Network Architecture
+ 
+### 4.1 VLANs and Network Segmentation
+ 
+- Internal network segmented into VLANs to separate sensitive systems (e.g., finance, HR) from general user networks.
+- Guest networks isolated from corporate resources to prevent unauthorized access.
+### 4.2 IPsec VPNs
+ 
+- Secure communication channels between multiple office locations via IPsec VPNs.
+- Ensures encrypted traffic and secure remote access for employees.
+### 4.3 Failover and Redundancy
+ 
+- Router failover configured to maintain connectivity in the event of primary device failure.
+- Ensures uninterrupted access to critical resources.
+## 5. Network Protocol Management
+ 
+We maintain and secure the following protocols:
+ 
+| Protocol | Security Measures |
+|----------|-------------------|
+| HTTP / HTTPS | Web traffic with TLS encryption enforced on HTTPS |
+| SSH | Secure device management access (limited to authorized administrators) |
+| DNS / DHCP | Internal name resolution and IP address allocation with hardened server configurations |
+| Email (SMTP and POP3) | Secured to prevent spoofing and unauthorized access |
+| WPA3 | Used for wireless internet access |
+ 
+## 6. Network Protections
+ 
+### DHCP Server Protections
+ 
+- DHCP snooping to prevent rogue DHCP servers on the network.
+- Limit DHCP leases to trusted devices.
+## 7. Third-Party Security Services
+ 
+Considering engaging a managed security service provider (MSSP) or other third-party security solutions to supplement in-house capabilities.
+ 
+**Benefits:**
+ 
+- 24/7 monitoring for small teams
+- Advanced threat intelligence and incident response
+- Cost-effective expertise for growing organizations
+## 8. Summary of Security Posture
+ 
+By implementing a combination of Zero Trust, endpoint detection, network segmentation, protocol security, and failover redundancy, we aim to:
+ 
+- Protect critical data and IT assets
+- Reduce risk from internal and external threats
+- Maintain high availability for business operations
+- Support scalable security as the organization expands
