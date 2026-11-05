@@ -1,0 +1,62 @@
+# Addressing Plan
+ 
+## Notes
+ 
+- `172.16.0.0/16` was selected to provide a more enterprise-professional structure for the buildings.
+- `/24` subnets were used for VLANs to simplify the work and future expansion.
+- Point-to-point links use `/30` for efficient address use.
+**Addressing conventions**
+ 
+- All user VLANs → `172.16.X.0/24`
+- Guest WiFi → one large `/24` (VLAN 190) shared between buildings
+- Inter-building links → `172.16.254.X/30`
+- HSRP scheme → virtual gateway `.1`, primary router `.2`, secondary `.3`
+- Isolated Lab VLAN → no default gateway assigned / no route to Internet
+Each VLAN uses HSRP with a virtual default gateway ending in `.1`. Gateway1 uses `.2` and Gateway2 uses `.3`, allowing failover and redundancy for all devices.
+ 
+Different VLANs were used based on the department. The Operations Lab VLAN is completely isolated. The Guest WiFi VLAN is separated from all internal VLANs.
+ 
+**Access rules**
+ 
+- Guest WiFi VLAN (190) → Internet only
+- Operations Lab VLAN (200) → no route to Internet, no route to office networks
+- Internal WiFi VLAN (100) → same access as wired internal networks
+- Firewalls/ACLs → define separation between office and pharmacy departments
+Each `/24` subnet supports up to 254 hosts, allowing for the required 50% growth in staff, devices, and lab equipment without re-addressing.
+ 
+## Office
+ 
+| VLAN | Name | Who Is In It | Subnet |
+|------|------|--------------|--------|
+| 10 | OFFICE-MGM | Manager, Assistant, Secretaries | 172.16.10.0/24 |
+| 20 | OFFICE-MKTG | Marketing | 172.16.20.0/24 |
+| 30 | OFFICE-IT | IT Staff | 172.16.30.0/24 |
+| 40 | OFFICE-HR-ACCT | HR, Accounting | 172.16.40.0/24 |
+| 50 | OFFICE-TRAINING | Training Staff | 172.16.50.0/24 |
+| 60 | OFFICE-DOCTOR | Doctor | 172.16.60.0/24 |
+| 70 | OFFICE-CLASS | Classroom | 172.16.70.0/24 |
+| 80 | OFFICE-CONF | Conference Room | 172.16.80.0/24 |
+ 
+## Wireless (Shared)
+ 
+| VLAN | Name | Use | Subnet |
+|------|------|-----|--------|
+| 100 | INTERNAL-WIFI | Internal Employees | 172.16.100.0/24 |
+| 190 | GUEST-WIFI | Guests (Classroom) | 172.16.190.0/24 |
+ 
+## Pharmacy
+ 
+| VLAN | Name | Who Is In It | Subnet |
+|------|------|--------------|--------|
+| 110 | PHARM-ADMIN | Director, Pharmacist, Technician | 172.16.110.0/24 |
+| 120 | PHARM-INTERNAL | Control and Analytical Lab | 172.16.120.0/24 |
+| 200 | PHARM-OPLAB-ISOLATED | Operations Lab | 172.16.200.0/24 |
+ 
+## Point-to-Point Links
+ 
+Point-to-point links for the VPN tunnels (redundant links).
+ 
+| Link | Subnet | Side A IP | Side B IP |
+|------|--------|-----------|-----------|
+| OfficeGW1 ↔ PharmGW1 (VPN 1) | 172.16.254.0/30 | 172.16.254.1 (Office) | 172.16.254.2 (Pharm) |
+| OfficeGW2 ↔ PharmGW2 (VPN 2) | 172.16.254.4/30 | 172.16.254.5 (Office) | 172.16.254.6 (Pharm) |
