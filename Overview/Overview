@@ -1,0 +1,67 @@
+# Campus Network Design: Presentation Reference
+  
+## Overview
+ 
+We'll deploy a small campus network with a main network room in the Office building, a secondary network room in the Lab building, and a fiber backbone between them.
+ 
+A business firewall at the Office connects to the Internet and provides a VPN to HQ. Managed switches and Wi-Fi access points in both buildings provide connectivity, and VLANs separate corporate users, lab equipment, guests, and management.
+ 
+## The Basic Idea
+ 
+### 1. Pick one building to be the "main hub."
+ 
+- The Office building will be the main network hub because most people work there.
+- This is where the firewall, main switches, and Internet connection will live.
+### 2. Connect the two buildings with fiber.
+ 
+- We run a single-mode fiber cable from the Office building to the Lab building.
+- This lets both buildings share the same network securely.
+### 3. Put networking equipment in each building.
+ 
+- **Office:** firewall + main switches + Wi-Fi.
+- **Lab:** one main switch + Wi-Fi for the classroom.
+- All wall ports (Ethernet jacks) plug into these switches.
+### 4. Separate the network into different groups (VLANs).
+ 
+We split the network into 4 sections:
+ 
+| VLAN | Purpose |
+|------|---------|
+| Corporate | Normal staff computers |
+| Operations Lab | Lab equipment that must be isolated |
+| Guest | Visitors on Wi-Fi |
+| Management | Switches, APs, firewall (IT only) |
+ 
+This keeps everything organized and secure.
+ 
+### 5. Decide how each group can talk.
+ 
+| VLAN | Access |
+|------|--------|
+| Corporate | Can reach Internet + HQ |
+| Operations Lab | No Internet (totally isolated) |
+| Guest | Internet only, nothing else |
+| Management | IT staff only |
+ 
+### 6. Add wireless networks.
+ 
+- Both buildings have Wi-Fi.
+- Two Wi-Fi names:
+  - **"Corporate Wi-Fi"** → Corporate VLAN
+  - **"Guest Wi-Fi"** → Guest VLAN
+### 7. Assign IP address ranges.
+ 
+- Each VLAN gets its own subnet (e.g., `10.10.10.0/24`, `10.10.20.0/24`, etc.).
+- This makes addressing clean and easy.
+### 8. List equipment we need.
+ 
+- Firewall
+- Core switch
+- Access switches
+- Lab switch
+- Fiber uplinks
+- Wi-Fi access points
+- Patch panels, racks, UPS, etc.
+---
+ 
+That's the starting point.
